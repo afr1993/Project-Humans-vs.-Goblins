@@ -9,11 +9,14 @@ public class Main {
 
         while (true){
             world.render();//Render World Map
-            System.out.println("Controls : n/s/e/w");
+            System.out.println("Controls \nMovement: n/s/e/w\nInventory: i\nEnd Game: f");
             String direction = scanner.next();
 
             if (direction.equalsIgnoreCase("i")) {
                 player.getInventory().showInventory();
+            } else if (direction.equalsIgnoreCase("f")) {
+                System.out.println("GAME OVER");
+                System.exit(0);
             } else {
                 world.movePLayer(direction);
             }
